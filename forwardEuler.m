@@ -1,4 +1,4 @@
-function y = forwardEuler(x, y, N, f, f')
+function y = forwardEuler(x, f, f')
 %forwardEuler - forward Euler on f with input of x
     
 end
