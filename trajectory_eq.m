@@ -1,6 +1,7 @@
-function [y] = trajectory_eq(x, alpha, v)
+function [x, z] = trajectory_eq(t, alpha, v)
 g = -9.81;
 %calcuate the trajectory y of the particle at point x when fired at and
 %angle alpha to the horizontal at initial speed v.
-y = x * tan(alpha) - (-g * x^2)/(v^2 *(cos(alpha)^2)) + 0.8;
+x = v * t * cos(alpha);
+z = v * t * sin(alpha) - (g * t ^ 2) / 2;
 end
