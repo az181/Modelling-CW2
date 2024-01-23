@@ -1,5 +1,5 @@
-function y = forwardEuler(height, f, h)
-% forwardEuler - forward Euler on f where f is a function with input y and t (in that ordder )
+function y = forwardEuler(hight, f, h)
+%forwardEuler - forward Euler on f where f is a function with input y and t (in that ordder )
 t(1) = 0;
 y(1) = height;
 n = 1;
@@ -8,4 +8,4 @@ while y(n) > 0
     t(n + 1) = t(n) + h;
     n = n + 1;
 end
-end 
+end
