@@ -1,4 +1,4 @@
-function y = forwardEuler(height, @dydt, h)
+function y = forwardEuler(height, dydt, h)
 %forwardEuler - forward Euler on f where f is a function with input y and t (in that ordder )
 t(1) = 0;
 y(1) = height;
