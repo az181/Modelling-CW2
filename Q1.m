@@ -11,11 +11,12 @@ function [] = Q1(v, alpha)
     [x, y] = forwardEuler(H_ball, @dydt, @dxdt, h, v, alpha)
 
     %use the trajectory equation to find the real trajectory of the equation
-    ty(1) = H_ball
-    tt(1) = 0
+    ty(1) = H_ball;
+    tx(1) = 0;
+    tt(1) = 0;
     while ty(n) > 0,
-        tt(n + 1) = tt(n) + h
-        ty(n + 1) = trajectory_eq(tt(n + 1), v, alpha)
+        tt(n + 1) = tt(n) + h;
+        [tx(n + 1), ty(n + 1)] = trajectory_eq(tt(n + 1), v, alpha);
     end
     
     %plot y against x
