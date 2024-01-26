@@ -8,7 +8,7 @@ function [] = Q1(v, alpha)
     h = 0.1;
 
     %perform forward euler to obtain arrays of x and y values
-    [x, y] = forwardEuler(H_ball, @dydt, h, v, alpha)
+    [x, y] = forwardEuler(H_ball, @dydt, @dxdt, h, v, alpha);
     
     %plot y against x
     plot(x, y)
