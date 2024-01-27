@@ -5,7 +5,7 @@ function [] = Q1(v, alpha)
 
     %load constants
     load("constants.mat")
-    h = 0.1;
+    h = 0.01;
 
     %perform forward euler to obtain arrays of x and y values
     [x, y] = forwardEuler(H_ball, @dydt, h, v, alpha)
@@ -14,9 +14,12 @@ function [] = Q1(v, alpha)
     ty(1) = H_ball;
     tx(1) = 0;
     tt(1) = 0;
-    while ty(n) > 0,
+    n = 1;
+    while ty(n) > 0
         tt(n + 1) = tt(n) + h;
         [tx(n + 1), ty(n + 1)] = trajectory_eq(tt(n + 1), v, alpha);
+        ty(n + 1) = ty(n + 1) + 0.8;
+        n = n + 1;
     end
     
     %plot y against x
@@ -31,7 +34,7 @@ function [] = Q1(v, alpha)
 
     %plot the real trajectory using the trajectory equation
     figure(2)
-    plot(x, ty)
+    plot(tx, ty)
     xlabel("x")
     ylabel("y")
     title("Trajectory of ball with no drag")
