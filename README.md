@@ -8,4 +8,3 @@
 |H<sub>ball</sub> | Initial height of ball | 0.8 m|
 |L | Distance from baseline to net | 11.9 m|
 |H<sub>net</sub> | Net height | 0.9 m|
-test2
