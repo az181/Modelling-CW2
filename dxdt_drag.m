@@ -3,5 +3,5 @@ function dx = dxdt_drag (x, t, v_x, v_y)
 load("constants.mat");
 % v_x = cos(alpha) * v;
 % dy = (2 * m) / (C_D * p * A * abs( v_y )) * (a + g)
-dx = v_x - ( C_D * p * A) / (4 * m) * abs( sqrt(v_y^2 + v_x^2) ) * v_x ;
+dx = v_x - ( C_D * p * A) / (2 * m) * abs( sqrt(v_y^2 + v_x^2) ) * v_x ;
 end
