@@ -15,7 +15,7 @@ theRealValue = trajectory_eq(bigT,v,alpha);
 
 % check lots of different h and see the error to our "true" value
 while n<100
-    error = abs(forwardEuler(H_ball,dxdt,dydt,h,v,alpha) - theRealValue);
+    error = abs(forwardEuler(H_ball,dxdt,dydt,h,v,alpha) - theRealValue); %nope nope nope, the function here should be an input too so that I can put any equation in
     n = n+1;
 end
 %might want to plot too
