@@ -1,19 +1,14 @@
 %test for various h
 %win
+function h = Q3hTester(theFunction, v, alpha, bigT)
 
 load("constants.mat")
-
-%should be inputs
-theFunction = %joel upload it pls
-v = 2;
-alpha = pi/4;
-bigT = %a number
 
 %make things that are used just for this script
 h = 1:1:100;
 n = 1;
 theRealValue = trajectory_eq(bigT,v,alpha);
-error = [0:];
+error = zeros(1,100);
 
 % check lots of different h and see the error to our "true" value
 while n<100
@@ -24,5 +19,5 @@ end
 %also i think this should be a function with the appropriate variables as
 %inputs
 
-
+end
 %hopefully my madness makes some sense here
