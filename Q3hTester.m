@@ -6,17 +6,18 @@ load("constants.mat")
 %should be inputs
 theFunction = %joel upload it pls
 v = 2;
-alpha = pi/3;
+alpha = pi/4;
 bigT = %a number
 
-%make h yo
+%make things that are used just for this script
 h = 1:1:100;
 n = 1;
 theRealValue = trajectory_eq(bigT,v,alpha);
+error = [0:];
 
 % check lots of different h and see the error to our "true" value
 while n<100
-    error = abs(theFunction() - theRealValue); %nope nope nope, the function here should be an input too so that I can put any equation in
+    error(n) = abs(theFunction() - theRealValue); %the function here should be an input
     n = n+1;
 end
 %might want to plot too
