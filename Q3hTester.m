@@ -9,7 +9,7 @@ alpha = pi/4;
 bigT = 1; %should find out what t is when the ball hits the ground
 
 %make things that are used just for this script
-h = 1:1:100;
+h = 1:0.01:10;
 n = 1;
 pos = trajectory_eq(bigT,v,alpha);
 theRealValue = pos;
@@ -18,7 +18,7 @@ error = zeros(1,100); %pre allocating array makes it faster by an infeasible amo
 
 % check lots of different h and see the error to our "true" value
 for n = 1:length(h)
-    h(n) = 1/h(n);
+    %h(n) = 1/h(n);
     Val = forwardEuler(H_ball,@dxdt,@dydt,h(n),v,alpha);
     error(n) = abs(Val(length(Val)) - theRealValue); %the function here should be an input
      
