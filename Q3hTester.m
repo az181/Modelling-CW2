@@ -9,7 +9,7 @@ alpha = pi/4;
 bigT = 1; %should find out what t is when the ball hits the ground
 
 %make things that are used just for this script
-h = 1:0.01:10;
+h = 1:1:100;
 n = 1;
 pos = trajectory_eq(bigT,v,alpha);
 theRealValue = pos;
