@@ -1,14 +1,14 @@
-%test for various h
-%win
+% test for various h
+% win
 
 load("constants.mat")
 
-%things that should be inputs
+% things that should be inputs
 v = 10;
 alpha = pi/4;
-bigT = 1; %should find out what t is when the ball hits the ground
+bigT = 1; % should find out what t is when the ball hits the ground
 
-%make things that are used just for this script
+% make things that are used just for this script
 h = 1:1:100;
 n = 1;
 pos = trajectory_eq(bigT,v,alpha);
@@ -23,11 +23,11 @@ for n = 1:length(h)
     error(n) = abs(Val(end) - theRealValue); %the function here should be an input
      
 end
-%drop final values because my indexing doesn't work
+% drop final values because my indexing doesn't work
 h(end) = [];
 error(end) = [];
 
-%might want to plot too
+% might want to plot too
 figure(1)
 loglog(h, error)
 xlabel("Value for h")

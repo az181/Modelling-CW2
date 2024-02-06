@@ -1,16 +1,15 @@
 function [fe_x, fe_y] = forwardEuler_Q3c(H_ball, dxdt, dydt, h, v, alpha)
-%forwardEuler - forward Euler on f where f is a function with input y and t (in that ordder )
+% forwardEuler - forward Euler on f where f is a function with input y and t (in that ordder )
 t(1) = 0;
 fe_y = H_ball;
 fe_x = 0;
-%output is the x and y value at time = bigT,
-n = 1;
+% output is the x and y value at time = bigT,
 v_x = cos(alpha) * v;
 v_y = sin(alpha) * v;
 
-%intial tt
-tt=0;
-%set bigT
+% intial tt
+tt = 0;
+% set bigT
 bigT = 1;
 
 for n = 1:10000
