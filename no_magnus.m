@@ -8,3 +8,4 @@ title("Trajectory of ball with no magnus force")
 subtitle("Approximated using Forward Euler")
 %set the axis limits to positive only
 ylim([0, inf])
+end
