@@ -20,7 +20,7 @@ error = zeros(1,100); %pre allocating array makes it faster by an infeasible amo
 for n = 1:length(h)
     %h(n) = 1/h(n);
     Val = forwardEuler(H_ball,@dxdt,@dydt,h(n),v,alpha);
-    error(n) = abs(Val(length(Val)) - theRealValue); %the function here should be an input
+    error(n) = abs(Val(end) - theRealValue); %the function here should be an input
      
 end
 %drop final values because my indexing doesn't work
