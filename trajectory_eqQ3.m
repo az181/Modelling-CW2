@@ -1,8 +1,7 @@
-function [x,y] = trajectory_eq(t, v, alpha)
+function [tr_x,tr_y] = trajectory_eqQ3(bigT, v, alpha)
 load("constants.mat");
 %calcuate the trajectory y of the particle at point x when fired at and
 %angle alpha to the horizontal at initial speed v.
-x = v * t * cos(alpha);
-y = (v * t * sin(alpha)) - ( ((g) * (t ^ 2)) / 2);
-
+tr_x = v * bigT * cos(alpha);
+tr_y = (v * bigT * sin(alpha)) - ( ((g) * (bigT ^ 2)) / 2);
 end
