@@ -12,7 +12,7 @@ omega_t = 1.2;
 
 %find x and y values for backspin (omega is negative)
 omega_b = -1.2;
-[bx, by] = forwardEuler_mag(H_ball, @dxdt_mag, @dxdt_mag, h, v, alpha, omega_b);
+[bx, by] = forwardEuler_mag(H_ball, @dxdt_mag, @dydt_mag, h, v, alpha, omega_b);
 
 %calculate trajectory for no rotation
 [nx, ny] = no_magnus(h, v, alpha);
