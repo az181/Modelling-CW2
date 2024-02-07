@@ -1,6 +1,6 @@
 load constants.mat 
 % preallocate
-h_interval = 0.001;
+h_interval = 0.01;
 h = 0.01:h_interval:1;
 xerror = zeros(1,100);
 yerror = zeros(1,100);
@@ -17,8 +17,8 @@ v = 10;
 for n = 1:length(h)
     [mpx,mpy] = midpointMethod(bigT, H_ball, h(n), @trajectory_eq, v, alpha);
     % disp(mpx);
-    xerror(n) = (abs(mpx(end)) - abs(xtr));
-    yerror(n) = (abs(mpy(end)) - abs(ytr)); %floor(abs(bigT/h(n)))
+    xerror(n) = (abs(mpx(floor(abs(bigT/h(n))))) - abs(xtr));
+    yerror(n) = (abs(mpy(floor(abs(bigT/h(n))))) - abs(ytr)); %floor(abs(bigT/h(n)))
     error(n) = sqrt((xerror(n))^2 + (yerror(n))^2);
 end
 % plot
