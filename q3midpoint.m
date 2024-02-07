@@ -17,8 +17,8 @@ v = 10;
 for n = 1:length(h)
     [mpx,mpy] = midpointMethod(bigT, H_ball, h(n), @trajectory_eq, v, alpha);
     % disp(mpx);
-    xerror(n) = (mpx(end) - xtr);
-    yerror(n) = (mpy(end) - ytr); %floor(abs(bigT/h(n)))
+    xerror(n) = (abs(mpx(end)) - abs(xtr));
+    yerror(n) = (abs(mpy(end)) - abs(ytr)); %floor(abs(bigT/h(n)))
     error(n) = sqrt((xerror(n))^2 + (yerror(n))^2);
 end
 % plot
