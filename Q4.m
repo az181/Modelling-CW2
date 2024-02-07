@@ -18,8 +18,15 @@ omega_b = -50;
 omega_n = 0;
 [nx, ny] = forwardEuler_mag(H_ball, @dxdt_mag, @dydt_mag, h, v, alpha, omega_n);
 
-% plot the three trajectories for comparison
-%topspin
-plot(tx, ty, bx, by, "--", nx, ny, ":")
-title("Trajectory with varying spins")
+x = [11.9, 11.9];
+y = [0, 0.9];
+
+%plot the three trajectories for comparison
+plot(tx, ty, bx, by, '--', nx, ny, ':', x, y, 'k')
+title("Trajectory with Magnus effect")
+legend('Topspin', 'Backspin', 'No Rotation', 'Placement of Net')
+xlabel("x")
+ylabel("y")
 ylim([0, inf])
+
+
