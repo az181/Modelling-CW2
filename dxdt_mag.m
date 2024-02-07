@@ -4,25 +4,26 @@ function dx = dxdt_mag (y, t, v_x, v_y, omega, v, alpha)
 % omega is the angular velocity: positive if the ball spins clockwise (topspin)
 
 %calculate initial conditions
-initial_x = v * cos(alpha)
+initial_x = v * cos(alpha);
 
 
-% this constant was soused from this articale (I can now nologer find it)
+%drag force coefficient sourced from https://www.researchgate.net/publication/313199404_The_drag_coefficient_of_tennis_balls
 Ca = 0.55;
 
 load constants.mat A C_D m p;
 
 
-%find velocity and angle at time t
+%find velocity and angle of magnus force at time t
 v_x = abs(v_x);
 v_y = abs(v_y);
 V = sqrt((v_x)^2 + (v_y)^2);
+%the magnus force is orthogonal to the velocity
 theta = atand(v_y/v_x);
 
 % find the radius of the ball
 r = sqrt(A/pi);
 
-% find the linear speed of rotation
+% find the linear speed of rotation (rad/s)
 rotation_speed = r * omega;
 
 %calculate magnus force acting on the ball (resolved in x direction)
