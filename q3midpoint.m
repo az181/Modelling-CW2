@@ -6,13 +6,19 @@ xerror = zeros(1,100);
 yerror = zeros(1,100);
 error = zeros(1,100);
 
-
 % inputs
 bigT = 1;
 alpha = pi/4;
 v = 10;
+
+%generate h
+for n = 1:length(h)
+    h(n) = bigT/n;
+end
+
 % calculate "actual" 
 [xtr,ytr] = trajectory_eq(bigT,v,alpha);
+
 % loop over a load of h
 for n = 1:length(h)
     [mpx,mpy] = midpointMethod(bigT, H_ball, h(n), @trajectory_eq, v, alpha);
