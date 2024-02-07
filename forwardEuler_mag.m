@@ -1,4 +1,4 @@
-function [x, y] = forwardEuler_mag(H_ball, dxdt, dydt, h, v, alpha, omega)
+function [x, y] = forwardEuler_mag(H_ball, dxdt_mag, dydt_mag, h, v, alpha, omega)
   % forward Euler for the magnus effect - forward Euler on dxdt and dydt where the inputs are (x or y) t v_x v_y and omega 
   % this reterns the x y valuse for each point in time incrementing by h
 
@@ -13,9 +13,13 @@ function [x, y] = forwardEuler_mag(H_ball, dxdt, dydt, h, v, alpha, omega)
       if y(n) < 0
           break
       end
-      x(n + 1) = x(n) + h * dxdt(x(n), t(n), v_x, v_y, omega);
-      y(n + 1) = y(n) + h * dydt(y(n), t(n), v_x, v_y, omega);
+      vx = dxdt_mag(x(n), t(n), v_x, v_y, omega, v, alpha);
+      vy = dydt_mag(x(n), t(n), v_x, v_y, omega, v, alpha);
+      x(n + 1) = x(n) + h * vx;
+      y(n + 1) = y(n) + h * vy;
       t(n + 1) = t(n) + h;
+      v_x = vx;
+      v_y = vy;
       % v_x = x(n+1) - x(n);
       % v_y = y(n+1) - y(n);
       
