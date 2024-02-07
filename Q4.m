@@ -17,11 +17,15 @@ omega_b = -1.2;
 % calculate trajectory for no rotation
 [nx, ny] = no_magnus(h, v, alpha);
 
-% plot the three trajectories for comparison
-figure(1)
-plot(tx, ty)
-title("Trajectory with topspin")
+x = [11.9, 11.9];
+y = [0, 0.9];
+
+%plot the three trajectories for comparison
+plot(tx, ty, bx, by, '--', nx, ny, ':', x, y, 'k')
+title("Trajectory with Magnus effect")
+legend('Topspin', 'Backspin', 'No Rotation', 'Placement of Net')
 xlabel("x")
 ylabel("y")
-ylim([])
+ylim([0, inf])
+
 
