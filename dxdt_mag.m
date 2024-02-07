@@ -20,10 +20,10 @@ function dx = dxdt_mag (y, t, v_x, v_y, v, omega)
   r = sqrt(A/pi);
 
   %find the linear speed of rotation
-  rotation_speed = r * omega;
-  ax = Ca * (p/2) * ((v + rotation_speed)^2 - (v - rotation_speed)^2) * A / m;
+  rotation_speed = r * omega
+  ax = Ca * (p/2) * ((v + rotation_speed)^2 - (v - rotation_speed)^2) * A / m
 
-  dx = v_x - ( C_D * p * A) / (2 * m) * abs( sqrt(v_y^2 + v_x^2) ) * v_x + ax;
+  dx = v_x - ( C_D * p * A) / (2 * m) * abs( sqrt(v_y^2 + v_x^2) ) * v_x + ax
 
 
 end

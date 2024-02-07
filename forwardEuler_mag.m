@@ -1,4 +1,4 @@
-function [x, y] = forwardEuler_mag(H_ball, dxdt, dydt, h, v, alpha, omega)
+function [x, y] = forwardEuler_mag(H_ball, dxdt_mag, dydt_mag, h, v, alpha, omega)
   %forwardEuler - forward Euler on f where f is a function with input y and t (in that ordder )
   t(1) = 0;
   y(1) = H_ball;
@@ -11,8 +11,8 @@ function [x, y] = forwardEuler_mag(H_ball, dxdt, dydt, h, v, alpha, omega)
       if y(n) < 0
           break
       end
-      x(n + 1) = x(n) + h * dxdt(x(n), t(n), v_x, v_y, v, omega);
-      y(n + 1) = y(n) + h * dydt(y(n), t(n), v_x, v_y, v, omega);
+      x(n + 1) = x(n) + h * dxdt_mag(x(n), t(n), v_x, v_y, v, omega);
+      y(n + 1) = y(n) + h * dydt_mag(y(n), t(n), v_x, v_y, v, omega);
       t(n + 1) = t(n) + h;
       % v_x = x(n+1) - x(n);
       % v_y = y(n+1) - y(n);
